@@ -19,7 +19,8 @@ const getAPI = async (table, req) => {
     // body: JSON.stringify(req),
   });
   console.log('res : ', res);
-  let text = await res.text();
+  let result = await res.json();
+  let text = await result.text();
   try {
     console.log('GET return : ', JSON.parse(text));
     return JSON.parse(text);
