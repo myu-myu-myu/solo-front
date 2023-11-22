@@ -13,17 +13,19 @@ const url = 'https://solo-back.onrender.com';
 
 const getAPI = async (table, req) => {
   console.log('req front-GET: ', req);
+  console.log('`${url}/api/${table}` : ', `${url}/api/${table}`);
   let res = await fetch(`${url}/api/${table}`, {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
     // body: JSON.stringify(req),
   });
   console.log('res : ', res);
-  let result = await res.json();
-  let text = await result.text();
+  let text = await res.json();
+  // console.log('result :******** ', result);
+  // let text = await result.text();
   try {
-    console.log('GET return : ', JSON.parse(text));
-    return JSON.parse(text);
+    console.log('GET return : ', text);
+    return text;
   } catch (error) {
     console.error('Received this from server:', text);
     throw new Error('Server is down');

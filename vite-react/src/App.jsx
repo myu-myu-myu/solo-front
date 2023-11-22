@@ -109,7 +109,7 @@ function App({ getAPI, postAPI, deleteAPI }) {
         {lists &&
           lists.map((list) => {
             return (
-              <div>
+              <div key={list.id}>
                 week : {list.week}{' '}
                 <a id={list.type} href={list.url} target="_blank">
                   <strong>{list.title}</strong>
