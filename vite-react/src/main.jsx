@@ -9,7 +9,7 @@ console.log('import.meta.env : ', import.meta.env);
 // let res = await fetch('http://localhost:8000/hi', {
 // let url = process.env.SERVER_URL || 'http://localhost:8000';
 // let url = 'http://localhost:8000';
-const url = 'https://solo-back.onrender.com/';
+const url = 'https://solo-back.onrender.com';
 
 const getAPI = async (table, req) => {
   console.log('req front-GET: ', req);
