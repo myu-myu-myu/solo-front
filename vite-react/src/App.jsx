@@ -63,32 +63,14 @@ function App({ getAPI, postAPI, deleteAPI }) {
             function setD(value) {
               setDiscs((discs) => discs.map((e) => (e === task ? value : e)));
             }
-            // function setCompleted(completed) {
-            //   setTask({ ...task, completed });
-            // }
-            // async function setCompleted(completed) {
-            //   setTask(await taskRepo.save{ ...task, completed });
-            // } // >>> PUT
             function setTitle(title) {
               setTask({ ...task, title });
             }
             function setDis(dis) {
               setD({ ...task, dis });
             }
-            // async function doSaveTask(){
-            //   try {
-            //     setTask(await taskRepo.save(task)); //PUT
-            //   } catch (error) {
-            //     alert(error.message);
-            //   }
-            // }
             return (
               <div key={task.id}>
-                {/* <input
-                  type="checkbox"
-                  checked={task.completed}
-                  onChange={(e) => setCompleted(e.target.checked)}
-                /> */}
                 <p>No.{task.id}</p>
                 <input
                   value={task.title}
@@ -98,14 +80,13 @@ function App({ getAPI, postAPI, deleteAPI }) {
                   value={task.description}
                   onChange={(e) => setDis(e.target.value)}
                 />
-                {/* <button onClick={() => doSaveTask()}>保存</button> */}
                 <button onClick={() => deleteTask()}>削除</button>
               </div>
             );
           })}
       </main>
       <h1>カリキュラム</h1>
-      <div>
+      <div id="frame">
         {lists &&
           lists.map((list) => {
             return (

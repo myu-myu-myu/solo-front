@@ -6,9 +6,7 @@ import './index.css';
 // dotenv.config();
 
 console.log('import.meta.env : ', import.meta.env);
-// let res = await fetch('http://localhost:8000/hi', {
 // let url = process.env.SERVER_URL || 'http://localhost:8000';
-// let url = 'http://localhost:8000';
 const url = 'https://solo-back.onrender.com';
 
 const getAPI = async (table, req) => {
@@ -17,12 +15,9 @@ const getAPI = async (table, req) => {
   let res = await fetch(`${url}/api/${table}`, {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
-    // body: JSON.stringify(req),
   });
   console.log('res : ', res);
   let text = await res.json();
-  // console.log('result :******** ', result);
-  // let text = await result.text();
   try {
     console.log('GET return : ', text);
     return text;
@@ -54,7 +49,6 @@ const deleteAPI = async (table, id, req) => {
   let res = await fetch(`${url}/api/${table}/${id}`, {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
-    // body: JSON.stringify(req),
   });
   console.log('res : ', res);
   let text = await res.text();
